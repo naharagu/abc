@@ -11,11 +11,10 @@ using mint = modint1000000007;
 
 int main()
 {
-	int m1, d1, m2, d2;
-	cin >> m1 >> d1 >> m2 >> d2;
+	int n;
+	cin >> n;
 
-	if (m2 > m1)
-		cout << 1 << endl;
-	else
-		cout << 0 << endl;
+	int ans = 0;
+
+	cout << ans << endl;
 }

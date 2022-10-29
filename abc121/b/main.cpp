@@ -11,11 +11,29 @@ using mint = modint1000000007;
 
 int main()
 {
-	int m1, d1, m2, d2;
-	cin >> m1 >> d1 >> m2 >> d2;
+	int n, m, c;
+	cin >> n >> m >> c;
 
-	if (m2 > m1)
-		cout << 1 << endl;
-	else
-		cout << 0 << endl;
+	vector<vector<int>> a(n, vector<int>(m));
+	vector<int> b(m);
+
+	rep(i, m)
+		cin >> b[i];
+
+	int ans = 0;
+
+	rep(i, n)
+	{
+		int check = 0;
+		rep(j, m)
+		{
+			cin >> a[i][j];
+			check += a[i][j] * b[j];
+		}
+		if (check + c > 0)
+			ans++;
+	}
+
+
+	cout << ans << endl;
 }
