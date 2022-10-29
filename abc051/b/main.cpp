@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#include <atcoder/all>
+using namespace atcoder;
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define rep1(i, n) for (int i = 1; i < (int)(n+1); i++)
+using ll = long long;
+using P = pair<int,int>;
+using Graph = vector<vector<int>>;
+using mint = modint1000000007;
+
+int main()
+{
+	int k, s;
+	cin >> k >> s;
+
+	int z;
+	int ans = 0;
+	for (int x = 0; x <= k; x++)
+	{
+		for (int y = 0; y <= k; y++)
+		{
+			z = s - x - y;
+			if (z >= 0 && z <= k)
+				ans++;
+		}
+	}
+
+	cout << ans << endl;
+}
