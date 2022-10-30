@@ -11,10 +11,15 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int k;
+	cin >> k;
 
-	int ans = 0;
+	int ans;
+
+	if (k % 2)
+		ans = (k / 2) * (k / 2 + 1);
+	else
+		ans = k * k / 4;
 
 	cout << ans << endl;
 }
