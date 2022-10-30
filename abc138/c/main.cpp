@@ -14,7 +14,17 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
+	vector<double> v(n);
+	rep(i, n)
+		cin >> v[i];
 
-	cout << ans << endl;
+	sort(v.begin(), v.end());
+
+
+	for (int i = 1; i <= n - 1; i++)
+	{
+		v[i] = (v[i] + v[i - 1]) / 2;
+	}
+
+	cout << v[n - 1] << endl;
 }

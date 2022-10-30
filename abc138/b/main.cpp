@@ -14,26 +14,20 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> a(n);
+	vector<double> a(n);
 	rep(i, n)
 		cin >> a[i];
 
-	double ans;
+	double ans = 1;
 
-	double n1 = 1.0;
-	double n2 = 0.0;
-
-	rep(i, n)
-	{
-		n1 *= a[i];
-	}
+	double n1 = 0;
 
 	rep(i, n)
 	{
-		n2 += n1 / a[i];
+		n1 += 1.0 / a[i];
 	}
 
-	ans = n1 / n2;
+	ans = 1 / n1;
 
-	cout << ans << endl;
+	printf("%.10f\n", ans);
 }
