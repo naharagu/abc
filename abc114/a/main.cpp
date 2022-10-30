@@ -11,30 +11,11 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, k;
-	cin >> n >> k;
+	int n;
+	cin >> n;
 
-	if (k > n)
-	{
-		cout << 0 << endl;
-		return 0;
-	}
-
-	vector<ll> h(n);
-	rep(i, n)
-		cin >> h[i];
-
-	sort(h.begin(), h.end());
-
-	for(int i = n - 1; i >= n - k; i--)
-	{
-		h[i] = 0;
-	}
-
-	ll ans = 0;
-
-	rep(i, n)
-		ans += h[i];
-
-	cout << ans << endl;
+	if (n == 3 || n == 5 || n == 7)
+		cout << "YES" << endl;
+	else
+		cout << "NO" << endl;
 }

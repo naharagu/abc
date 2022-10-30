@@ -11,30 +11,17 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, k;
-	cin >> n >> k;
+	string s;
+	cin >> s;
 
-	if (k > n)
+	int ans = INT_MAX;
+
+	for (int i = 0; i <= (int)s.size() - 3; i++)
 	{
-		cout << 0 << endl;
-		return 0;
+		int a = 100 * (s[i] - '0') + 10 * (s[i + 1] - '0') + s[i + 2] - '0';
+
+		ans = min(ans, abs(753 - a));
 	}
-
-	vector<ll> h(n);
-	rep(i, n)
-		cin >> h[i];
-
-	sort(h.begin(), h.end());
-
-	for(int i = n - 1; i >= n - k; i--)
-	{
-		h[i] = 0;
-	}
-
-	ll ans = 0;
-
-	rep(i, n)
-		ans += h[i];
 
 	cout << ans << endl;
 }
