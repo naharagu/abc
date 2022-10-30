@@ -11,15 +11,14 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	string s;
+	cin >> s;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	if (s == "Sunny")
+		cout << "Cloudy" << endl;
+	else if (s == "Cloudy")
+		cout << "Rainy" << endl;
+	else if (s == "Rainy")
+		cout << "Sunny" << endl;
 
-	int ans = 0;
-
-	cout << ans << endl;
 }

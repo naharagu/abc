@@ -11,15 +11,11 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	int x, a, b;
+	cin >> x >> a >> b;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
-
-	int ans = 0;
-
-	cout << ans << endl;
+	if (abs(x - a) < abs(x - b))
+		cout << "A" << endl;
+	else
+		cout << "B" << endl;
 }

@@ -11,15 +11,28 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	string s;
+	cin >> s;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	rep(i, (int)s.size())
+	{
+		if (i % 2 == 0)
+		{
+			if (s[i] == 'L')
+			{
+				cout << "No" << endl;
+				return 0;
+			}
+		}
+		else
+		{
+			if (s[i] == 'R')
+			{
+				cout << "No" << endl;
+				return 0;
+			}
+		}
+	}
 
-	int ans = 0;
-
-	cout << ans << endl;
+	cout << "Yes" << endl;
 }

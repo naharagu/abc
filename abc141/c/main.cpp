@@ -11,15 +11,25 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	int n, k, q;
+	cin >> n >> k >> q;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	vector<int> p(n, k);
 
-	int ans = 0;
+	rep(i, q)
+	{
+		int a;
+		cin >> a;
 
-	cout << ans << endl;
+		p[a - 1]++;
+	}
+
+	rep(i, n)
+	{
+		if (p[i] > q)
+			cout << "Yes" << endl;
+		else
+			cout << "No" << endl;
+	}
+
 }

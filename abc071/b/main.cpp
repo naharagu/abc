@@ -11,15 +11,28 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
+	string s;
+	cin >> s;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	string alpha = "abcdefghijklmnopqrstuvwxyz";
 
-	int ans = 0;
+	bool flag = false;
 
-	cout << ans << endl;
+	rep(i, 26)
+	{
+		rep(j, (int)s.size())
+		{
+			if (s[j] == alpha[i])
+				flag = true;
+		}
+		if (!flag)
+		{
+			cout << alpha[i] << endl;
+			return 0;
+		}
+
+		flag = false;
+	}
+
+	cout << "None" << endl;
 }

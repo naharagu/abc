@@ -11,13 +11,8 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n >> m;
-
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	int n;
+	cin >> n;
 
 	int ans = 0;
 
