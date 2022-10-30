@@ -11,20 +11,13 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int n, d;
+	cin >> n >> d;
 
 	int ans = 0;
-	int small = INT_MAX;
 
-	rep(i, n)
-	{
-		int a;
-		cin >> a;
-		if (a < small)
-			ans++;
-		small = min(small, a);
-	}
+	while (ans * (d * 2 + 1) < n)
+		ans++;
 
 	cout << ans << endl;
 }

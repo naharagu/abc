@@ -11,20 +11,17 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int a, b;
+	cin >> a >> b;
 
-	int ans = 0;
-	int small = INT_MAX;
-
-	rep(i, n)
-	{
-		int a;
-		cin >> a;
-		if (a < small)
-			ans++;
-		small = min(small, a);
-	}
-
-	cout << ans << endl;
+	if (a == 0 || b == 0)
+		cout << "Zero" << endl;
+	else if (a < 0 && 0 < b)
+		cout << "Zero" << endl;
+	else if (a > 0 && b > 0)
+		cout << "Positive" << endl;
+	else if ((b - a) % 2)
+		cout << "Positive" << endl;
+	else
+		cout << "Negative" << endl;
 }

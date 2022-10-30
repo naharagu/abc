@@ -14,17 +14,25 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
-	int small = INT_MAX;
+	vector<int> a(n);
+	vector<int> b(n);
 
 	rep(i, n)
 	{
-		int a;
-		cin >> a;
-		if (a < small)
-			ans++;
-		small = min(small, a);
+		cin >> a[i];
+		b[i] = a[i];
 	}
 
-	cout << ans << endl;
+	sort(b.begin(), b.end());
+
+	int big1 = b[n - 1];
+	int big2 = b[n - 2];
+
+	rep(i, n)
+	{
+		if (a[i] == big1)
+			cout << big2 << endl;
+		else
+			cout << big1 << endl;
+	}
 }

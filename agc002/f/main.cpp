@@ -15,16 +15,6 @@ int main()
 	cin >> n;
 
 	int ans = 0;
-	int small = INT_MAX;
-
-	rep(i, n)
-	{
-		int a;
-		cin >> a;
-		if (a < small)
-			ans++;
-		small = min(small, a);
-	}
 
 	cout << ans << endl;
 }
