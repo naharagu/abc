@@ -14,7 +14,46 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
+	vector<int> p(n + 1);
+	vector<int> q(n + 1);
 
+	rep(i, n)
+		cin >> p[i];
+	rep(i, n)
+		cin >> q[i];
+
+	vector<int> v;
+
+	rep(i, n)
+		v.push_back(i + 1);
+
+	int index = 0;
+	int a = -1;
+	int b = -1;
+
+	while (next_permutation(v.begin(), v.end()))
+	{
+		bool flag = true;
+
+		rep(i , n)
+		{
+			if (v[i] != p[i])
+				flag = false;
+		}
+		if(flag)
+			a = index;
+
+		flag = true;
+		rep(i , n)
+		{
+			if (v[i] != q[i])
+				flag = false;
+		}
+		if(flag)
+			b = index;
+		index++;
+	}
+
+	int ans = abs(a - b);
 	cout << ans << endl;
 }
