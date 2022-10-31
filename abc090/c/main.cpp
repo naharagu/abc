@@ -11,27 +11,10 @@ using mint = modint1000000007;
 
 int main()
 {
-	string s;
-	cin >> s;
+	int n;
+	cin >> n;
 
-	int len = s.size();
-	int ans = INT_MAX;
-
-	int count = 0;
-	rep(i, len)
-	{
-		if ((s[i] - '0') == i % 2)
-			count++;
-	}
-	ans = min(ans, count);
-
-	count = 0;
-	rep(i, len)
-	{
-		if ((s[i] - '0') != i % 2)
-			count++;
-	}
-	ans = min(ans, count);
+	int ans = 0;
 
 	cout << ans << endl;
 }
