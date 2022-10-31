@@ -11,30 +11,30 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int h, w;
+	cin >> h >> w;
 
-	vector<int> h(n);
-	rep(i, n)
-		cin >> h[i];
+	char a[h + 2][w + 2];
 
-	int ans = 0;
-	vector<bool> checked(n, false);
-
-	rep(i, n - 1)
+	for (int i = 1; i <= h; i++)
 	{
-		if (!checked[i])
+		for (int j = 1; j <= w; j++)
 		{
-			checked[i] = true;
-			for (int j = i + 1; j < n; j++)
-			{
-				if (h[j - 1] < h[j])
-					break;
-				checked[j] = true;
-				ans = max(ans, j - i);
-			}
+			cin >> a[i][j];
 		}
 	}
-
-	cout << ans << endl;
+	for (int i = 0; i <= h + 1; i++)
+	{
+		for (int j = 0; j <= w + 1; j++)
+		{
+			if (i == 0 || i == h + 1 || j == 0 || j == w + 1)
+			{
+				cout << "#";
+			}
+			else
+				cout << a[i][j];
+			if (j == w + 1)
+				cout << endl;
+		}
+	}
 }

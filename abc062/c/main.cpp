@@ -14,27 +14,7 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> h(n);
-	rep(i, n)
-		cin >> h[i];
-
 	int ans = 0;
-	vector<bool> checked(n, false);
-
-	rep(i, n - 1)
-	{
-		if (!checked[i])
-		{
-			checked[i] = true;
-			for (int j = i + 1; j < n; j++)
-			{
-				if (h[j - 1] < h[j])
-					break;
-				checked[j] = true;
-				ans = max(ans, j - i);
-			}
-		}
-	}
 
 	cout << ans << endl;
 }
