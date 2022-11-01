@@ -11,24 +11,21 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string s;
+	cin >> s;
 
-	map<string, int> m;
-	int big = 0;
-	rep(i, n)
+	map<char, int> mp;
+
+	rep(i, s.size())
 	{
-		string s;
-		cin >> s;
-
-		m[s]++;
-		big = max(big, m[s]);
+		mp[s[i]]++;
 	}
 
-	for (auto p : m)
-	{
-		if (p.second == big)
-			cout << p.first << endl;
-	}
+	bool b1 = (!mp['N'] && !mp['S']) || (mp['N'] && mp['S']);
+	bool b2 = (!mp['E'] && !mp['W']) || (mp['E'] && mp['W']);
 
+	if (b1 && b2)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 }

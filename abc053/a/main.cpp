@@ -14,21 +14,8 @@ int main()
 	int n;
 	cin >> n;
 
-	map<string, int> m;
-	int big = 0;
-	rep(i, n)
-	{
-		string s;
-		cin >> s;
-
-		m[s]++;
-		big = max(big, m[s]);
-	}
-
-	for (auto p : m)
-	{
-		if (p.second == big)
-			cout << p.first << endl;
-	}
-
+	if (n < 1200)
+		cout << "ABC" << endl;
+	else
+		cout << "ARC" << endl;
 }

@@ -11,24 +11,18 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string o, e;
+	cin >> o >> e;
 
-	map<string, int> m;
-	int big = 0;
-	rep(i, n)
+	int len = o.size() + e.size();
+
+	rep(i, len)
 	{
-		string s;
-		cin >> s;
-
-		m[s]++;
-		big = max(big, m[s]);
+		if (i % 2 == 0)
+			cout << o[i / 2];
+		else
+			cout << e[i / 2];
 	}
 
-	for (auto p : m)
-	{
-		if (p.second == big)
-			cout << p.first << endl;
-	}
-
+	cout << endl;
 }

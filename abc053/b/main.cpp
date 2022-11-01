@@ -11,24 +11,29 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string s;
+	cin >> s;
 
-	map<string, int> m;
-	int big = 0;
-	rep(i, n)
+	int ans_A = 0;
+	int ans_Z = 0;
+
+	rep(i, s.size())
 	{
-		string s;
-		cin >> s;
-
-		m[s]++;
-		big = max(big, m[s]);
+		if (s[i] == 'A')
+		{
+			ans_A = i;
+			break;
+		}
 	}
 
-	for (auto p : m)
+	for (int i = (int) s.size() - 1; i >= 0; i--)
 	{
-		if (p.second == big)
-			cout << p.first << endl;
+		if (s[i] == 'Z')
+		{
+			ans_Z = i;
+			break;
+		}
 	}
 
+	cout << ans_Z - ans_A + 1 << endl;
 }

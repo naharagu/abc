@@ -14,21 +14,7 @@ int main()
 	int n;
 	cin >> n;
 
-	map<string, int> m;
-	int big = 0;
-	rep(i, n)
-	{
-		string s;
-		cin >> s;
+	int ans = 0;
 
-		m[s]++;
-		big = max(big, m[s]);
-	}
-
-	for (auto p : m)
-	{
-		if (p.second == big)
-			cout << p.first << endl;
-	}
-
+	cout << ans << endl;
 }
