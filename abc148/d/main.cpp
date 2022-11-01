@@ -13,26 +13,21 @@ int main()
 {
 	int n;
 	cin >> n;
-	vector<int> t(n);
-	int sum = 0;
+
+	vector<int> a(n);
+	rep(i, n)
+		cin >> a[i];
+
+	int ans = 1;
+
 	rep(i, n)
 	{
-		cin >> t[i];
-		sum += t[i];
+		if (a[i] == ans)
+			ans++;
 	}
 
-	int m;
-	cin >> m;
-	// vector<int> p(m);
-	// vector<int> x(m);
-	// rep(i, m)
-	// 	cin >> p[i] >> x[i];
-
-	rep(i, m)
-	{
-		int p, x;
-		cin >> p >> x;
-
-		cout << sum - (t[p - 1] - x) << endl;
-	}
+	if (ans == 1)
+		cout << -1 << endl;
+	else
+		cout << n - ans + 1 << endl;
 }

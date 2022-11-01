@@ -11,28 +11,17 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
-	vector<int> t(n);
-	int sum = 0;
-	rep(i, n)
+	vector<int> a(3);
+	rep(i, 3)
+		cin >> a[i];
+
+	sort(a.begin(), a.end());
+
+	int ans = 0;
+	for (int i = 1; i < 3; i++)
 	{
-		cin >> t[i];
-		sum += t[i];
+		ans += abs(a[i] - a[i - 1]);
 	}
 
-	int m;
-	cin >> m;
-	// vector<int> p(m);
-	// vector<int> x(m);
-	// rep(i, m)
-	// 	cin >> p[i] >> x[i];
-
-	rep(i, m)
-	{
-		int p, x;
-		cin >> p >> x;
-
-		cout << sum - (t[p - 1] - x) << endl;
-	}
+	cout << ans << endl;
 }

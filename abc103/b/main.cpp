@@ -11,28 +11,21 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
-	vector<int> t(n);
-	int sum = 0;
+	string s, t;
+	cin >> s >> t;
+
+	bool ans = false;
+	int n = s.size();
+
 	rep(i, n)
 	{
-		cin >> t[i];
-		sum += t[i];
+		if (s == t)
+			ans = true;
+		s = s.substr(n - 1) + s.substr(0, n - 1);
 	}
 
-	int m;
-	cin >> m;
-	// vector<int> p(m);
-	// vector<int> x(m);
-	// rep(i, m)
-	// 	cin >> p[i] >> x[i];
-
-	rep(i, m)
-	{
-		int p, x;
-		cin >> p >> x;
-
-		cout << sum - (t[p - 1] - x) << endl;
-	}
+	if (ans)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 }
