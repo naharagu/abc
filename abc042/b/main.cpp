@@ -11,27 +11,18 @@ using mint = modint1000000007;
 
 int main()
 {
-	int x;
-	cin >> x;
+	int n, l;
+	cin >> n >> l;
 
-	bool dp[110000];
+	vector<string> s(n);
+	rep(i, n)
+		cin >> s[i];
 
-	dp[0] = true;
+	sort(s.begin(), s.end());
 
-	rep(i, x)
+	rep(i, n)
 	{
-		if (dp[i])
-		{
-			rep(j, 6)
-			{
-				dp[i + j + 100] = true;
-			}
-		}
+		cout << s[i];
 	}
-
-
-	if (dp[x])
-		cout << 1 << endl;
-	else
-		cout << 0 << endl;
+	cout << endl;
 }

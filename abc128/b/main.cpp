@@ -14,7 +14,22 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
+	vector<string> s(n);
+	vector<int > p(n);
+	rep(i, n)
+		cin >> s[i] >> p[i];
 
-	cout << ans << endl;
+	vector<int> ans(n);
+	rep(i, n)
+		ans[i] = i;
+
+	sort(ans.begin(), ans.end(), [&](int a, int b)
+	{
+		if (s[a] != s[b])
+			return s[a] < s[b];
+		return p[a] > p[b];
+	});
+
+	rep(i, n)
+		cout << ans[i] + 1 << endl;
 }

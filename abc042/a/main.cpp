@@ -11,27 +11,13 @@ using mint = modint1000000007;
 
 int main()
 {
-	int x;
-	cin >> x;
+	int a, b, c;
+	cin >> a  >> b >> c;
 
-	bool dp[110000];
-
-	dp[0] = true;
-
-	rep(i, x)
-	{
-		if (dp[i])
-		{
-			rep(j, 6)
-			{
-				dp[i + j + 100] = true;
-			}
-		}
-	}
-
-
-	if (dp[x])
-		cout << 1 << endl;
+	if ((a == 5 && b == 5 && c == 7) ||
+		(a == 5 && b == 7 && c == 5) ||
+		(a == 7 && b == 5 && c == 5) )
+		cout << "YES" << endl;
 	else
-		cout << 0 << endl;
+		cout << "NO" << endl;
 }

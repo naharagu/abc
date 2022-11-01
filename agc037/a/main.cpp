@@ -11,27 +11,21 @@ using mint = modint1000000007;
 
 int main()
 {
-	int x;
-	cin >> x;
+	int ans = 0;
+	string s, a, b;
 
-	bool dp[110000];
+	cin >> s;
+	a = b = "";
 
-	dp[0] = true;
-
-	rep(i, x)
+	for (auto c : s)
 	{
-		if (dp[i])
+		if ((b += c) != a)
 		{
-			rep(j, 6)
-			{
-				dp[i + j + 100] = true;
-			}
+			ans++;
+			a = b;
+			b = "";
 		}
 	}
 
-
-	if (dp[x])
-		cout << 1 << endl;
-	else
-		cout << 0 << endl;
+	cout << ans << endl;
 }
