@@ -14,7 +14,17 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
+	int big = 0;
+	int sum = 0;
+	vector<int> p(n);
+	rep(i, n)
+	{
+		cin >> p[i];
+		sum += p[i];
+		big = max(big, p[i]);
+	}
+
+	int ans = sum - big / 2;
 
 	cout << ans << endl;
 }

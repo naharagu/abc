@@ -9,12 +9,36 @@ using P = pair<int,int>;
 using Graph = vector<vector<int>>;
 using mint = modint1000000007;
 
+int n, m;
+// vector<bool> solved(m);
+// vector<int> wa(m);
+bool solved[101010];
+int wa[101010];
+
 int main()
 {
-	int n;
-	cin >> n;
+	cin >> n >> m;
+	rep(i, m)
+	{
+		int p;
+		string s;
+		cin >> p >> s;
+		p--;
 
-	int ans = 0;
-
-	cout << ans << endl;
+		if (s == "WA" && !solved[p])
+			wa[p]++;
+		if (s == "AC")
+			solved[p] = true;
+	}
+	int ans_ac = 0;
+	int ans_wa = 0;
+	rep(i, n)
+	{
+		if (solved[i])
+		{
+			ans_ac++;
+			ans_wa += wa[i];
+		}
+	}
+	cout << ans_ac << " " << ans_wa << endl;
 }

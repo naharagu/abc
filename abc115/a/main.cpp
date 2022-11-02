@@ -14,7 +14,12 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
-
-	cout << ans << endl;
+	if (n == 25)
+		cout << "Christmas" << endl;
+	else if (n == 24)
+		cout << "Christmas Eve" << endl;
+	else if (n == 23)
+		cout << "Christmas Eve Eve" << endl;
+	else if (n == 22)
+		cout << "Christmas Eve Eve Eve" << endl;
 }
