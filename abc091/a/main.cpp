@@ -11,20 +11,10 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
-	vector<int> h(n);
-	rep(i, n)
-		cin >> h[i];
+	int a, b, c;
+	cin >> a  >> b >> c;
 
-	bool ans = true;
-	rep(i, n - 2)
-	{
-		if (h[i + 1] - h[i] > 1)
-			ans = false;
-	}
-
-	if (ans)
+	if (a + b >= c)
 		cout << "Yes" << endl;
 	else
 		cout << "No" << endl;

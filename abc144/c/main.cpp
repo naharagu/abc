@@ -11,10 +11,16 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
+	ll n;
 	cin >> n;
 
-	int ans = 0;
+	ll ans = LONG_MAX;
+
+	rep1(i, 1010101)
+	{
+		if (n % i == 0)
+			ans = min(ans, i + n / i - 2);
+	}
 
 	cout << ans << endl;
 }

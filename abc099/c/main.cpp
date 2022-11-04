@@ -13,19 +13,8 @@ int main()
 {
 	int n;
 	cin >> n;
-	vector<int> h(n);
-	rep(i, n)
-		cin >> h[i];
 
-	bool ans = true;
-	rep(i, n - 2)
-	{
-		if (h[i + 1] - h[i] > 1)
-			ans = false;
-	}
+	int ans = 0;
 
-	if (ans)
-		cout << "Yes" << endl;
-	else
-		cout << "No" << endl;
+	cout << ans << endl;
 }
