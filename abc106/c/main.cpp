@@ -11,10 +11,16 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string s;
+	ll k;
+	cin >> s >> k;
 
-	int ans = 0;
-
-	cout << ans << endl;
+	if (k == 1 && s[0] == '1')
+		cout << 1 << endl;
+	else if (k > 2 && s[0] == '1')
+		cout << s[1] << endl;
+	else if (s.size() == 1)
+		cout << s[0] << endl;
+	else
+		cout << s[0] << endl;
 }
