@@ -11,32 +11,34 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n, m;
-	cin >> n;
-	map<string, int> mp;
+	int n;
+	int m;
 
-	int max_revenue = 0;
-	int min_cost = INT_MAX;
+	cin >> n;
+	vector<string> s(n);
+	rep(i, n)
+		cin >> s[i];
+	cin >> m;
+	vector<string> t(m);
+	rep(i, m)
+		cin >> t[i];
+
+	int ans = 0;
 
 	rep(i, n)
 	{
-		string s;
-		cin >> s;
-		mp[s]++;
-		if (mp[s] > max_revenue)
-			max_revenue = mp[s];
+		int point = 0;
+		rep(j, n)
+		{
+			if (s[i] == s[j])
+				point++;
+		}
+		rep(j, m)
+		{
+			if (s[i] == t[j])
+				point--;
+		}
+		ans = max(ans, point);
 	}
-	cin >> m;
-	rep(i, m)
-	{
-		string t;
-		cin >> t;
-		mp[t]++;
-		if (mp[t] < min_cost)
-			min_cost = mp[t];
-	}
-
-	int ans = max_revenue - min_cost;
-
 	cout << ans << endl;
 }
