@@ -14,13 +14,17 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> a(n);
+	bool ans = false;
 	rep(i, n)
-		cin >> a[i];
+	{
+		char a;
+		cin >> a;
+		if (a == 'Y')
+			ans = true;
+	}
 
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
-
-	cout << ans << endl;
+	if (ans)
+		cout << "Four" << endl;
+	else
+		cout << "Three" << endl;
 }

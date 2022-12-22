@@ -14,7 +14,14 @@ int main()
 	int n;
 	cin >> n;
 
-	int ans = 0;
+	string s = "0123456789ABCDEF";
 
-	cout << ans << endl;
+	if (n < 16)
+		cout << 0 << s[n] << endl;
+	else
+	{
+		cout << s[n / 16];
+		n %= 16;
+		cout << s[n] << endl;
+	}
 }

@@ -14,13 +14,22 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
+	map<string, int> m;
 
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
+	rep(i, n)
+	{
+		string s;
+		cin >> s;
+		if (s[0] == 'M' ||
+			s[0] == 'A' ||
+			s[0] == 'R' ||
+			s[0] == 'C' ||
+			s[0] == 'H')
+			map[s]++;
+	}
+
+	int ans = map.size();
+	ans = ans * (ans - 1) / 2;
 
 	cout << ans << endl;
 }

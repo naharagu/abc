@@ -14,11 +14,11 @@ int main()
 	int x, y, z;
 	cin >> x >> y >> z;
 
-	int ans = 0;
+	int ans = -1;
 
 	if ((x > 0 && y > 0 && x < y) || (x < 0 && y < 0 && x > y))
 		ans = x;
-	else if 
+	else if
 
 	cout << ans << endl;
 }

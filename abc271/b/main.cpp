@@ -11,10 +11,25 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int n, q;
+	cin >> n >> q;
 
-	int ans = 0;
+	vector<vector<int>> a(n);
 
-	cout << ans << endl;
+	rep(i, n)
+	{
+		int l;
+		cin >> l;
+		a[i].resize(l);
+		rep(k, l)
+			cin >> a[i][k];
+	}
+
+	rep(i, q)
+	{
+		int s, t;
+		cin >> s >> t;
+
+		cout << a[s - 1][t - 1] << endl;
+	}
 }

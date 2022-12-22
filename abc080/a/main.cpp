@@ -11,16 +11,10 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int n, a, b;
+	cin >> n >> a >> b;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
-
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
+	int ans = min(n * a, b);
 
 	cout << ans << endl;
 }

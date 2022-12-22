@@ -11,16 +11,14 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string s, t;
+	cin >> s >> t;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
+	sort(s.begin(), s.end());
+	sort(t.begin(), t.end(), greater<char>());
 
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
-
-	cout << ans << endl;
+	if (s < t)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 }

@@ -14,13 +14,7 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
-
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
+	int ans = n / 3;
 
 	cout << ans << endl;
 }

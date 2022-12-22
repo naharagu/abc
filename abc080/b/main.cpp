@@ -11,16 +11,20 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
+	ll n;
 	cin >> n;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
+	ll x = 0;
+	ll tmp = n;
 
-	sort(a.begin(), a.end());
-	
-	int ans = 0;
+	while (tmp)
+	{
+		x += tmp % 10;
+		tmp /= 10;
+	}
 
-	cout << ans << endl;
+	if (n % x == 0)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 }

@@ -14,13 +14,26 @@ int main()
 	int n;
 	cin >> n;
 
-	vector<int> a(n);
-	rep(i, n)
-		cin >> a[i];
+	map<int, int> m;
 
-	sort(a.begin(), a.end());
-	
+	rep(i, n)
+	{
+		int a;
+		cin >> a;
+		m[a]++;
+	}
+
 	int ans = 0;
+	for (auto a: m)
+	{
+		int x = a.first;
+		int y = a.second;
+
+		if (y < x)
+			ans += y;
+		else
+			ans += y - x;
+	}
 
 	cout << ans << endl;
 }
