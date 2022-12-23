@@ -11,11 +11,11 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int a, b;
+	cin >> a >> b;
 
-	if (n >= 1000)
-		cout << "ABD" << endl;
-	else
-		cout << "ABC" << endl;
+	int ans = max(a + b, a - b);
+	ans = max(ans, a * b);
+
+	cout << ans << endl;
 }

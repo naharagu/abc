@@ -11,11 +11,10 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int n, k;
+	cin >> n >> k;
 
-	if (n >= 1000)
-		cout << "ABD" << endl;
-	else
-		cout << "ABC" << endl;
+	int ans = (n - 1 + k - 2) / (k - 1);
+
+	cout << ans << endl;
 }

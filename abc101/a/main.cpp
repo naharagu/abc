@@ -11,11 +11,18 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	string s;
+	cin >> s;
 
-	if (n >= 1000)
-		cout << "ABD" << endl;
-	else
-		cout << "ABC" << endl;
+	int ans = 0;
+
+	rep(i, s.size())
+	{
+		if (s[i] == '+')
+			ans++;
+		else
+			ans--;
+	}
+
+	cout << ans << endl;
 }

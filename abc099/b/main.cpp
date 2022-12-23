@@ -11,10 +11,12 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int a, b;
+	cin >> a >> b;
 
-	int ans = 0;
+	int ans = b - a;
+
+	ans = (ans * (ans - 1)/ 2) - a;
 
 	cout << ans << endl;
 }

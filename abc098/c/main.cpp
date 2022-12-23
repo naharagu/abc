@@ -12,28 +12,30 @@ using mint = modint1000000007;
 int main()
 {
 	int n;
-	cin >> n;
+	string s;
+	cin >> n >> s;
 
-	int ans = n;
-
-	rep(i, n + 1)
+	int sum = 0;
+	vector<int> a(n);
+	rep(i, n)
 	{
-		int cc = 0;
-		int t = i;
-
-		while (t > 0)
-		{
-			cc += t % 6;
-			t /= 6;
-		}
-		t = n - i;
-		while (t > 0)
-		{
-			cc += t % 9;
-			t /= 9;
-		}
-		if (ans > cc)
-			ans = cc;
+		if (s[i] == 'W')
+			a[i] = 0;
+		else
+			a[i] = 1;
+		sum += a[i];
 	}
+
+	int ans = INT_MAX;
+	int sofar = 0;
+	rep(i, n)
+	{
+		int cnt = 0;
+		cnt = (i - sofar) + (sum - sofar);
+		sofar += a[i];
+		// cout  << i << ' ' << cnt << endl;
+		ans = min(ans, cnt);
+	}
+
 	cout << ans << endl;
 }

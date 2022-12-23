@@ -14,8 +14,7 @@ int main()
 	int n;
 	cin >> n;
 
-	if (n >= 1000)
-		cout << "ABD" << endl;
-	else
-		cout << "ABC" << endl;
+	int ans = 0;
+
+	cout << ans << endl;
 }

@@ -14,8 +14,17 @@ int main()
 	int n;
 	cin >> n;
 
-	if (n >= 1000)
-		cout << "ABD" << endl;
+	int ori = n;
+	int div = 0;
+
+	while (n)
+	{
+		div += n % 10;
+		n /= 10;
+	}
+
+	if (ori % div == 0)
+		cout << "Yes" << endl;
 	else
-		cout << "ABC" << endl;
+		cout << "No" << endl;
 }

@@ -12,28 +12,30 @@ using mint = modint1000000007;
 int main()
 {
 	int n;
-	cin >> n;
+	string s;
+	cin >> n >> s;
 
-	int ans = n;
-
-	rep(i, n + 1)
+	int ans = 0;
+	rep(i, n)
 	{
-		int cc = 0;
-		int t = i;
+		int cnt = 0;
 
-		while (t > 0)
+		for (char c = 'a'; c <= 'z'; c++)
 		{
-			cc += t % 6;
-			t /= 6;
+			bool left = false;
+			bool right = false;
+
+			for (int j = 0; j < i; j++)
+				if (s[j] == c)
+					left = true;
+			for (int j = i; j < n; j++)
+				if (s[j] == c)
+					right = true;
+			if (left && right)
+				cnt++;
 		}
-		t = n - i;
-		while (t > 0)
-		{
-			cc += t % 9;
-			t /= 9;
-		}
-		if (ans > cc)
-			ans = cc;
+		ans = max(ans, cnt);
 	}
+
 	cout << ans << endl;
 }
