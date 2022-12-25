@@ -11,9 +11,14 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int a, b;
+	cin >> a >> b;
 
-	int ans = 0;
+
+	int ans = 1;
+
+	rep(i, b)
+		ans *= a;
+		
 	cout << ans << endl;
 }

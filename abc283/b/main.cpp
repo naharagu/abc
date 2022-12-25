@@ -13,7 +13,31 @@ int main()
 {
 	int n;
 	cin >> n;
+	vector<int> a(n);
+	rep(i, n)
+	{
+		cin >> a[i];
+	}
 
-	int ans = 0;
-	cout << ans << endl;
+	int q;
+	cin >> q;
+	rep(i, q)
+	{
+		int z;
+		cin >> z;
+
+		int k;
+		cin >> k;
+		if (z == 1)
+		{
+			int x;
+			cin >> x;
+			a[k - 1] = x;
+		}
+		else
+		{
+			cout << a[k - 1] << endl;
+		}
+	}
+
 }

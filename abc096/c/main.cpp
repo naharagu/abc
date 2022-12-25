@@ -11,10 +11,34 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int h, w;
+	cin >> h >> w;
+
+	char s[h + 2][w + 2];
+
+	rep1(i, h)
+	{
+		rep1(j, w)
+			cin >> s[i][j];
+	}
 
 	int ans = 0;
 
-	cout << ans << endl;
+	rep1(i, h)
+	{
+		rep1(j, w)
+		{
+			if (s[i][j] == '#' &&
+				s[i][j - 1] != '#' &&
+				s[i][j + 1] != '#' &&
+				s[i - 1][j] != '#' &&
+				s[i + 1][j] != '#')
+				ans++;
+		}
+	}
+
+	if (ans == 0)
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
 }

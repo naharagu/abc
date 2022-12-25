@@ -15,5 +15,6 @@ int main()
 	cin >> n;
 
 	int ans = 0;
+
 	cout << ans << endl;
 }
