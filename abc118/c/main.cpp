@@ -11,10 +11,5 @@ using mint = modint1000000007;
 
 int main()
 {
-	int n;
-	cin >> n;
 
-	int ans = 0;
-
-	cout << ans << endl;
 }

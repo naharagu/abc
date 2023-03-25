@@ -14,12 +14,22 @@ int main()
 	int n, m;
 	cin >> n >> m;
 
-	vector<int> l(m);
-	vector<int> r(m);
-	rep(i, m)
-		cin >> l[i] >> r[i];
+	int smallest_r = INT_MAX;
+	int biggest_l = INT_MIN;
+	for (int i = 0; i < m; i++)
+	{
+		int l;
+		int r;
 
+		cin >> l >> r;
+		smallest_r = min(smallest_r, r);
+		biggest_l = max(biggest_l, l);
+	}
+
+	// cout << smallest_r << " " << biggest_l << endl;
 	int ans = 0;
-
+	if (smallest_r >= biggest_l) {
+		ans = smallest_r - biggest_l + 1;
+	}
 	cout << ans << endl;
 }

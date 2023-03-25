@@ -9,12 +9,25 @@ using P = pair<int,int>;
 using Graph = vector<vector<int>>;
 using mint = modint1000000007;
 
+map<ll, ll> m;
+
+ll helper(ll h)
+{
+	if (h < 1)
+		return 0;
+	if (m.count(h)){
+		return m[h];
+	}
+	else {
+		m[h] = 2 * helper(h / 2) + 1;
+		return m[h];
+	}
+}
+
 int main()
 {
-	int n;
-	cin >> n;
-
-	int ans = 0;
-
-	cout << ans << endl;
+	ll h;
+	cin >> h;
+	m[1] = 1;
+	cout << helper(h) << endl;
 }

@@ -14,15 +14,20 @@ int main()
 	int n;
 	cin >> n;
 	vector<int> h(n);
-	rep(i, n)
+	for (int i = 0; i < n; i++)
+	{
 		cin >> h[i];
+	}
 
 	bool ans = true;
-	rep(i, n - 2)
+	for (int i = n - 2; i >= 0; i--)
 	{
-		if (h[i + 1] - h[i] > 1)
+		if (h[i] > h[i + 1] + 1)
 			ans = false;
+		else if (h[i] == h[i + 1] + 1)
+			h[i]--;
 	}
+
 
 	if (ans)
 		cout << "Yes" << endl;

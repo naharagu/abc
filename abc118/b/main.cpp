@@ -14,27 +14,23 @@ int main()
 	int n, m;
 	cin >> n >> m;
 
-	int ans = 0;
-
-	vector<int> k(n+1);
-	rep(i, n)
-		cin >> k[i];
-
-	vector<int> a(m+1);
-	rep(i, n)
-	{
-		for(int j = 0; j < k[i]; j++)
-		{
-			int l;
-			cin >> l;
-			a[l - 1]++;
+	map<int, int> map;
+	for (int i = 0; i < n; i++) {
+		int k;
+		cin >> k;
+		for (int j = 0; j < k; j++) {
+			int a;
+			cin >> a;
+			map[a]++;
+			// cout << a << " " << map[a] << endl;
 		}
 	}
-
-	rep(i, m)
-	{
-		if (a[i] == n)
+	int ans = 0;
+	for (int i = 1; i <= m; i++) {
+		// cout << map[i] << endl;
+		if (map[i] == n) {
 			ans++;
+		}
 	}
 
 	cout << ans << endl;
