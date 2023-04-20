@@ -2,31 +2,26 @@
 using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
-#define rep1(i, n) for (int i = 1; i < (int)(n+1); i++)
 using ll = long long;
-using P = pair<int,int>;
-using Graph = vector<vector<int>>;
-using mint = modint1000000007;
 
 int main()
 {
 	int n;
 	cin >> n;
-	vector<int> h(n);
 
-	int ans = 0;
-	int high = 0;
+	vector<int> a(n + 1);
+	for (int i = 1; i <= n; ++i)
+		cin >> a[i];
 
-	rep(i, n)
+	int current_value = 1;
+	for (int i = 1; i <= n; ++i)
 	{
-		cin >> h[i];
-		if (h[i] > high)
+		current_value = a[current_value];
+		if (current_value == 2)
 		{
-			high = h[i];
-			ans = i;
+			cout << i << endl;
+			return 0;
 		}
 	}
-
-	cout << ans + 1 << endl;
+	cout << -1 << endl;
 }
