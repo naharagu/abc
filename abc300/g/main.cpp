@@ -6,8 +6,4 @@ using ll = long long;
 
 int main()
 {
-	stiring s;
-	cin >> s;
-
-	
 }
